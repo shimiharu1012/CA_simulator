@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>CAsimulator</title>
+    <link href="../static/CA_simulator.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>1D Cellular Automata Simulator</h1>
+    </header>
+    
+    <!-- 入力フォーム・リクエストの種類はPOST -->
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <div class="params">
+            
+            <!-- セル数の入力フォーム -->
+            <label for="cells_len">セル数(120~300)：</label>
+            <input type="range" min="120" max="300" step="2" name='cells_len' value="{{form_data['cells_len']}}">
+
+            <!-- 初期状態の入力フォーム -->
+            <label for="initial_state">初期状態：</label>
+            <select id="initial_state" name="initial_state">
+                <option {{ch0}}>ランダム</option>
+                <option {{ch1}}>右端のみ1</option>
+                <option {{ch2}}>左端のみ1</option>
+                <option {{ch3}}>中央のみ1</option>
+                <option {{ch4}}>0と1が交互</option>
+                <option {{ch5}}>右半分が1</option>
+                <option {{ch6}}>左半分が1</option>
+                <option {{ch7}}>すべて0</option>
+                <option {{ch8}}>すべて1</option>
+            </select>
+            
+
+            <!-- ルールの入力フォーム -->
+            <label for="rule">ルール：</label>
+            <input type="number" min="0" max="255" id="rule" name="rule" placeholder="0~255" value="{{form_data['rule']}}" required>
+
+            <!-- 世代数の入力フォーム -->
+            <label for="times">世代数：</label>
+            <input type="number" min="0" max="1000" id="times" name="times" placeholder="~1000" value="{{form_data['times']}}" required>
+
+            <br>
+
+            <!-- 実行ボタン -->
+            <input type="submit" value="生成">
+        </div>
+
+    </form>
+    
+    <!-- λパラメータを表示-->
+    <div class="result"><h3>{{message}}</h3></div>
+
+    <!-- 実際にオートマトンを表示 -->
+    <table>
+    {% for cells in cells_list %}
+        <tr>
+        {% for x in range(0,cells_len) %}
+            {% if cells[x]==0 %}
+            <td  class="cell_space"></td>
+            {% elif cells[x]==1 %}
+            <td  class="cell"></td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+
+</body>
+</html>

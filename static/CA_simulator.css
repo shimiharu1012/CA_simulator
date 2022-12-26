@@ -1,0 +1,115 @@
+body{
+    background-color: darkgray;
+    margin:0;
+}
+
+/* ヘッダのスタイル */
+header{
+    padding: 15px 0 15px 45px;
+    font-family: "Century Gothic";
+    color:darkblue;
+    border-bottom: black solid;
+    background-color:dimgray;
+    outline: solid 3px black;
+    outline-offset: 2px;
+    margin:0,auto;
+}
+
+
+/* 入力フォーム全体のスタイル */
+form{
+    text-align: center;
+}
+
+/*パラメータ入力部分のスタイル*/
+.params{
+    border-bottom:black solid;
+    padding-top:30px;
+    padding-bottom: 20px;
+}
+
+label{
+    color: darkblue;
+    font-weight: 600;
+}
+/*input,selectのスタイル*/
+input,select{
+    border-radius: 4px;
+    background-color: gainsboro;
+}
+
+/*input,スライダーのスタイル*/
+input[type="range"]{
+    background: gainsboro;
+    color:slategray
+}
+
+
+/* 実行ボタンのスタイル */
+input[type="submit"]{
+    border-width: 3px;
+    width: 100px;
+    height:50px;
+    margin-top: 20px;
+    font-size: large;
+    font-weight: 600;
+    color: darkblue;
+
+}
+
+
+
+
+/*λパラメータを表示する部分のスタイル*/
+.result{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+h3{
+    font-weight: 300;
+    display: inline;
+    color:darkblue;
+}
+
+
+
+/* 以下すべてセルオートマトンの表示に関するスタイル */
+table{
+    border-collapse: collapse;
+    border-spacing: 0; 
+    margin:0 auto;  
+}
+
+
+
+
+/*cellのスタイル*/
+.cell{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 5px;
+    height: 5px;
+    background-color: rgb(9, 9, 166);
+    white-space: nowrap;
+    border-color: rgba(0,0,0,0.6);
+    border-style: solid;
+    border-width: 1px;
+}
+
+/*空きセルのスタイル*/
+.cell_space{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+    white-space: nowrap;
+    border-color: rgba(0,0,0,0.6);
+    border-style: solid;
+    border-width: 1px;
+}
+
